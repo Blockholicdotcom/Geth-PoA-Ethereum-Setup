@@ -1,0 +1,16 @@
+[Unit]
+Description=Go Ethereum client
+
+[Service]
+User=root
+Type=simple
+Restart=always
+ExecStart=/usr/bin/geth --networkid 9999 --datadir /opt/ethPoA/node0/data --port  30303 --ipcdisable --syncmode full --rpc --allow-insecure-unlock --rpccorsdomain "*" --rpcport 8545 --rpcaddr "172.31.32.132" --unlock 0x41F0A524AE4907025f90328CC44AA90425F7a299 --password /opt/ethPoA/node0/password.txt --mine --rpcapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins '*' --wsapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --maxpeers 25 --etherbase 0 --gasprice 0 --targetgaslimit 9999999
+
+[Install]
+WantedBy=default.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable geth.service
+sudo systemctl start geth.service
+sudo systemctl status geth.service

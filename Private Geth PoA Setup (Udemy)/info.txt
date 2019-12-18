@@ -1,0 +1,22 @@
+Node 0:
+0x41F0A524AE4907025f90328CC44AA90425F7a299
+
+Passcode:
+123456789
+
+Node 1:
+0x895a802EEE5e571185020A905d3D7dEcFA572885
+
+Passcode:
+123456789
+
+Node0 Launch Command:
+geth --networkid 9999 --datadir ./data --port  30303 --ipcdisable --syncmode full --rpc --allow-insecure-unlock --rpccorsdomain "*" --rpcport 8545 --rpcaddr "172.31.32.132" --unlock 0x41F0A524AE4907025f90328CC44AA90425F7a299 --password ./password.txt --mine --rpcapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins '*' --wsapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --maxpeers 25 --etherbase 0 --gasprice 0 --targetgaslimit 9999999 console
+
+--networkid 9999 --datadir /opt/ethPoA/node0/data --port  30303 --ipcdisable --syncmode full --rpc --allow-insecure-unlock --rpccorsdomain "*" --rpcport 8545 --rpcaddr "172.31.32.132" --unlock 0x41F0A524AE4907025f90328CC44AA90425F7a299 --password /opt/ethPoA/node0/password.txt --mine --rpcapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins '*' --wsapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --maxpeers 25 --etherbase 0 --gasprice 0 --targetgaslimit 9999999 console
+
+
+web3.eth.getBalance("0x41f0a524ae4907025f90328cc44aa90425f7a299")
+
+Node1 Launch Command:
+geth --networkid 9999 --datadir ./data --port  30303 --ipcdisable --syncmode full --rpc --allow-insecure-unlock --rpccorsdomain "*" --rpcport 8545 --rpcaddr "172.31.34.8" --unlock 0x895a802EEE5e571185020A905d3D7dEcFA572885 --password ./password.txt --rpcapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins '*' --wsapi personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique --maxpeers 25 --etherbase 0 --gasprice 0 --targetgaslimit 9999999 console
